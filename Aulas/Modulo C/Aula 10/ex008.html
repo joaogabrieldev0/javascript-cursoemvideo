@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        #area{
+            background-color:#00d600;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicou" onmouseenter="entrou()" onmouseout="saiu()">
+        Interaja...
+    </div>
+    <script>
+        let div1 = document.getElementById('area')
+        div1.addEventListener("click", clicou)
+        div1.addEventListener("mouseenter", entrou)
+        div1.addEventListener("mouseout", saiu)
+
+
+
+
+        function clicou(){
+            div1.innerHTML = 'Clicou!'
+            div1.style.backgroundColor = 'Red'
+        }
+        
+        function entrou(){
+            div1.style.backgroundColor = "yellow"
+            div1.style.fontFamily = 'Arial'
+            div1.innerHTML = 'Entrou!'
+            div1.style.color = 'Black'
+        }
+
+        function saiu(){
+            div1.style.backgroundColor = '#00d600'
+            div1.style.fontFamily = 'Gill Sans'
+            div1.innerHTML = 'Saiu!'
+
+        }
+    </script>
+    
+
+
+</body>
+</html>

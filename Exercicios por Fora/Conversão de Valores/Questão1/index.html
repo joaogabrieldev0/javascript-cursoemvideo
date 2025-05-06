@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatação - Real</title>
+</head>
+<body>
+    <h1>Formatação de valor em Real</h1>
+    <input type="button" value="Iniciar Formatação" id="btn1" onclick="iniciar()">
+
+    <h3>Clique no botão para formatar o seguinte valor: 1599.99 para Real </h3>
+
+    <p id="p1">
+
+    </p>
+    <script>
+        var btn = document.getElementById('btn1')
+        
+        var valor = Number(1599.99)
+
+        var p1 = document.getElementById('p1')
+
+        function iniciar(){
+            var formatter = new Intl.NumberFormat(
+            'pt-BR',
+            {
+                  style: 'currency',
+                  currency: 'BRL',
+                  minimumFractionDigits: 2,  
+
+            })
+
+            formatter.format(valor) // Formata o valor da variável de acordo com o que foi definido na função construtora
+
+            p1.innerHTML = valor
+
+
+        }
+
+    </script>
+</body>
+</html>

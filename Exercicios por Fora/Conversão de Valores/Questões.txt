@@ -1,0 +1,29 @@
+1. Formate o número 1599.99 para Real (BRL) usando o padrão brasileiro.
+Saída esperada: R$ 1.599,99
+
+2. Formate o número 120.5 para Dólar americano (USD) no padrão dos Estados Unidos.
+Saída esperada: US$120.50
+
+3.  Formate o número 4589.75 para Euro (EUR) no padrão da Alemanha (de-DE). Saída esperada: 4.589,75 €
+
+4. Crie uma função formatarParaReal(valor) que retorne um número formatado como moeda brasileira.
+  Exemplo: formatarParaReal(49.9) → "R$ 49,90"
+
+5.  Crie uma função formatarParaDolar(valor) que retorne um número formatado como dólar americano.
+  Exemplo: formatarParaDolar(9.99) → "US$9.99"
+
+6.  Crie uma função formatarParaEuro(valor) que formate um número como Euro no padrão da França (fr-FR).
+  Exemplo: formatarParaEuro(100) → "100,00 €"
+
+7. Formate o valor 1000 para Real, Dólar e Euro, imprimindo os três formatos.
+  Exemplo de saída:
+
+
+8. Dado um valor em reais (ex: 250), converta para dólar usando taxa fixa (ex: 1 BRL = 0.20 USD) e formate o resultado em dólar.
+ Resultado esperado: US$50.00
+
+9.  Dado um valor em centavos (por exemplo, 3799), formate como reais com casas decimais.
+ Exemplo: formatarCentavos(3799) → "R$ 37,99"
+
+10.  Crie uma função formatarMoeda(valor, moeda, local) que receba valor, tipo de moeda ('BRL', 'USD', 'EUR') e localidade ('pt-BR', 'en-US', 'de-DE', etc), e retorne o valor formatado.
+  Exemplo: formatarMoeda(500, 'USD', 'en-US') → "US$500.00"

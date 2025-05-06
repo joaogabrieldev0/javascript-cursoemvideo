@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Boas-Vindas</title>
+    <style>
+        input{
+            padding: 20px;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio Boas-Vindas</h1>
+    
+    <input type="button" value="INICIAR DESAFIO" onclick = "clicou()" onmouseenter="entrou()" onmouseout="saiu()" id="button">
+
+    <script>
+        var btn = document.getElementById('button')
+
+        function entrou(){
+            btn.style.padding = '25px'
+
+        }
+
+        function saiu(){
+            btn.style.padding = '20px'
+
+        }
+
+        function clicou(){
+            var nome = window.prompt('Qual é o seu nome?')
+            var idade = window.prompt(`Olá ${nome}! Quantos anos você tem?`)
+            window.alert(`Acabei de conhecer ${nome} que tem ${idade} anos de idade!`)
+            
+
+
+        }
+
+
+
+    </script>
+
+
+    <h2>Desafio Concluído: 30.04.2025 - 16:39</h2>
+    
+</body>
+</html>

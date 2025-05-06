@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula Troco</title>
+    <style>
+        input{
+            padding: 20px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+    
+    <input type="button" value="Comprar Produto" id="btn1" onclick="clicar()">
+
+    <script>
+        var btn = document.getElementById('btn1')
+
+        function clicar(){
+            var produto = window.prompt('Qual produto você deseja comprar?') 
+
+            var preco = Number(window.prompt(`Quanto custa o (a) ${produto} que você está comprando?`))
+
+            var valorDado = Number(window.prompt(`Qual foi o valor que você deu para pagar ${produto}?`))
+
+            var troco = valorDado - preco
+            
+            var formatter = new Intl.NumberFormat
+            ('pt-BR',{
+                style: "currency",
+                currency: 'BRL',
+                minimumFractionDigits: 2,
+
+            })
+
+            formatter.format(preco, troco, valorDado)
+            
+            window.alert(`Você comprou ${produto} por ` + formatter.format(preco) +'\nDeu ' + formatter.format(valorDado) + ' em dinheiro e vai receber ' + formatter.format(troco) + ' de troco' + '\nVolte Sempre!')
+            
+          
+        }
+
+        // Fazer exercícios de conversão de cambio para aprender melhor
+
+    </script>
+
+    <h2>Desafio Concluido: 01.05.2025 - 00:10 </h2>
+</body>
+</html>

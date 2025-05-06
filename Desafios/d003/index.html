@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Antes e Depois</title>
+    <style>
+        input{
+            padding: 20px;
+            font-size: 15px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-family: Arial, Helvetica, sans-serif;">Desafio Antes e Depois</h1>
+
+    <input type="button" value="Antecessor e Sucessor"   id="btn1" onclick="clicou()">
+
+    <br>
+    
+    <script>
+        var btn = document.getElementById('btn1')
+
+        function clicou(){
+            
+            var num = Number(window.prompt('Informe um número'))
+            
+            var ante = num - 1
+            var suce = num + 1
+
+            window.alert(`Antes de ${num}, temos o número ${ante}!            
+            
+        Depois de ${num}, temos o número ${suce}!`)
+
+        } 
+
+    </script>
+
+    <h2>Desafio Concluído: 30.04.2025 - 16:54</h2>
+</body>
+</html>

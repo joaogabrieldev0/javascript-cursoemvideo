@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 2</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <script>
+        
+        // Formatação de Strings
+        var nome = window.prompt("Qual é seu nome?")
+        document.write(`<h2>Seu nome tem <strong>${nome.length}</strong> letras!</h2>`)
+        document.write
+        (`<ul>
+            <li>
+                Seu nome em maiúsculas fica ${nome.toUpperCase()}!
+            </li>
+
+            <li>            
+                Seu nome em minúsculas fica ${nome.toLowerCase()} 
+            
+            </li>
+        </ul>`)
+
+        var salario = window.prompt("Informe o seu salário: ")
+
+        var resultado = salario.toLocaleString("pt-BR", {style: 'currency', currency: 'BRL'})
+
+
+        document.write(`O seu salário é ${resultado}!`)
+
+    </script>
+</body>
+</html>
