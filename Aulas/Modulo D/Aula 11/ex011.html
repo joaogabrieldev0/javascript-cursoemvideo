@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste de Naturalidade</title>
+  </head>
+
+  <body>
+    <h1>Teste de Naturalidade</h1>
+
+    <p>
+      Informe Onde Você Nasceu:
+
+      <input type="text" id="paisNat" />
+
+      <input type="button" value="VERIFICAR!" onclick="verificar()"/>
+      
+    </p>
+
+    <div id="resultado">
+
+    </div>
+
+    <p></p>
+    
+    <p></p>
+
+    <script>
+        
+        function verificar(){
+            var pais = document.getElementById('paisNat').value
+
+            var resultado = document.querySelector('div#resultado')
+
+            var naturalidade = ''
+
+            if (pais == 'Brasil'){
+                
+                naturalidade = 'Brasileiro'
+                
+                resultado.innerHTML = `
+                <p style="font-family: Arial, Helvetica, sans-serif; 
+                font-size: 30px;
+                font-weight: bold;">
+                    
+                    Você nasceu em <null style='           
+                    background-image: linear-gradient(to left, #009440, #ffcb00 80%);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 35px;
+                    font-weight: bold;'>
+                    ${pais}</null>, e por isso é <ins>${naturalidade}</ins>!
+                </p>`
+
+            } else {
+                naturalidade = 'Estrangeiro'
+                resultado.innerHTML = `
+                <p style="font-family: Arial, Helvetica, sans-serif;
+                font-size: 30px; 
+                font-weight: bold">
+                    
+                    Você nasceu em ${pais}, e por isso é ${naturalidade}!
+                
+                </p>` 
+
+
+
+            }
+
+        }
+        
+
+    </script>
+  </body>
+</html>
