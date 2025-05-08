@@ -1,11 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hora do Dia</title>
+    <style>
+        body {
+            background-color: #555555;
+
+        }
+
+        #p-informacao {
+            margin-top: -20px;
+            text-align: center;
+
+        }
+
+        section {
+            background-color: white;
+            padding: 40px;
+            width: 50%;
+            max-width: 1915px;
+            min-width: 665px;
+
+
+        }
+
+        #div-imagem {
+            display: block;
+            text-align: center;
+            background-color: #555555;
+            padding: 15px;
+            margin: auto
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h1>Hora do Dia!</h1>
+
+    <section id="div-tudo">
+        <p id="p-informacao">
+            ESPAÇO DA INFO
+        </p>
+
+        <div id="div-imagem">
+            <img src="imagens-editadas/imagem-dia.png" alt="">
+        </div>
+
+        <script>
+            var agora = new Date()
+            var hora = agora.getHours()
+            var informacao = document.getElementById('p-informacao')
+            var imagem = document.getElementById('div-imagem')
+
+            if (hora > 0 && hora < 6){
+                
+                informacao.innerHTML = `São exatamente${hora} horas` 
+
+                imagem.innerHTML = '<img src="imagens-editadas/imagem-madrugada.png" alt="">'
+
+            }
+
+        </script>
+
+    </section>
+
+    <p>
+        Feito por João Gabriel, para:
+        <br>&#169 Curso em Vídeo</br>
+    </p>
+
 </body>
+
 </html>
