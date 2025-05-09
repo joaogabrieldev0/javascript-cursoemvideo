@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hora do Dia</title>
-    <script src="script.js"></script>
     <style>
         body {
             background-color: #555555;
@@ -90,18 +89,25 @@
                 <img src="" alt="">
             </div>
             <script>
-                var agora = new Date()
-                var hora = agora.getHours()
+                var agora = new Date();
+                var hora = agora.getHours();
                 var minutos = agora.getUTCMinutes();
-                var informacao = document.getElementById('p-informacao')
-                var imagem = document.getElementById('div-imagem')
+                var informacao = document.getElementById('p-informacao');
+                var imagem = document.getElementById('div-imagem');
                 // Condição 1
-                if (hora >= 0 && hora < 6) {
-                    if (minutos < 10) {
+                if (hora >= 0 && hora < 6) 
+                {
+                    
+                    if (minutos < 10) 
+                    {
 
                         informacao.innerHTML = `<h2>São exatamente 0${hora}:${minutos}</h2>`
                         imagem.innerHTML = '<img src="imagens-editadas/imagem-madrugada.png" alt="">'
-                    } else {
+                    } 
+                    
+                    else 
+                    
+                    {
 
                         informacao.innerHTML = `<h2>São exatamente 0${hora}:${minutos}</h2>`
                         imagem.innerHTML = '<img src="imagens-editadas/imagem-madrugada.png" alt="">'
@@ -109,36 +115,49 @@
                 }
 
                 // Condição 2
-                else if (hora >= 6 && hora < 8) {
-                    if (minutos < 10) {
-                        informacao.innerHTML = `<h2>São exatamente 0${hora}:${minutos}</h2>`
+                else if (hora >= 6 && hora < 8) 
+                {
+                    if (minutos < 10) 
+                    {
+                        informacao.innerHTML = `<h2>São exatamente 0${hora}:0${minutos}</h2>`
                         imagem.innerHTML = '<img src="imagens-editadas/imagem-madrugada.png" alt="">'
                     }
-                    else {
+                    
+                    else 
+                    {
                         informacao.innerHTML = `<h2>São exatamente 0${hora}:${minutos}</h2>`
                         imagem.innerHTML = '<img src="imagens-editadas/imagem-madrugada.png" alt="">'
                     }
                 }
                 // Condição 3
 
-                else if (hora >= 8 && hora < 13) {
-                    if (hora >= 8 && hora <= 9) {
-                        if (minutos < 10) {
+                else if (hora >= 8 && hora < 13) 
+                {
+                    if (hora >= 8 && hora <= 9) 
+                    {
+                        if (minutos < 10) 
+                        {
                             informacao.innerHTML = `<h2>São exatamente 0${hora}:0${minutos} </h2>`
                             imagem.innerHTML = '<img src="imagens-editadas/imagem-dia.png" alt="">'
                         }
-                        else {
+                        
+                        else 
+                        {
                             informacao.innerHTML = `<h2>São exatamente 0${hora}:${minutos} </h2>`
                             imagem.innerHTML = '<img src="imagens-editadas/imagem-dia.png" alt="">'
                         }
                     }
 
-                    else {
-                        if (minutos < 10) {
+                    else 
+                    {
+                        if (minutos < 10) 
+                        {
                             informacao.innerHTML = `<h2>São exatamente 0${hora}:0${minutos} </h2>`
                             imagem.innerHTML = '<img src="imagens-editadas/imagem-dia.png" alt="">'
                         }
-                        else {
+                        
+                        else 
+                        {
                             informacao.innerHTML = `<h2>São exatamente 0${hora}:${minutos} </h2>`
                             imagem.innerHTML = '<img src="imagens-editadas/imagem-dia.png" alt="">'
                         }
@@ -146,27 +165,32 @@
                 }
 
                 // Condição 4
-                else if (hora >= 13 && hora < 16) {
-
-                    if (minutos < 10) {
+                else if (hora >= 13 && hora < 16) 
+                {
+                    if (minutos < 10) 
+                    {
                         informacao.innerHTML = `<h2>São exatamente ${hora}:0${minutos} </h2>`
                         imagem.innerHTML = '<img src="imagens-editadas/imagem-tarde.png" alt="">'
                     }
-                    else {
+                    
+                    else 
+                    {
                         informacao.innerHTML = `<h2>São exatamente ${hora}:${minutos} </h2>`
                         imagem.innerHTML = '<img src="imagens-editadas/imagem-tarde.png" alt="">'
                     }
                 }
 
                 // Condição 5
-                else if (hora >= 16 && (hora < 18 && minutos == 30)) {
-
-                    if (minutos < 10) {
+                else if (hora >= 16 && (hora < 18 && minutos == 30)) 
+                {
+                    if (minutos < 10) 
+                    {
                         informacao.innerHTML = `<h2>São exatamente ${hora}:0${minutos} </h2>`
                         imagem.innerHTML = '<img src="imagens-editadas/imagem-anoitecer.png" alt="">'
                     }
 
-                    else {
+                    else 
+                    {
                         informacao.innerHTML = `<h2>São exatamente ${hora}:${minutos}</h2>`
                         imagem.innerHTML = '<img src="imagens-editadas/imagem-anoitecer.png" alt="">'
                     }
@@ -174,12 +198,16 @@
 
                 // Condição 6
 
-                else if (hora >= 18 && hora < 24) {
-                    if (minutos < 10) {
+                else if (hora >= 18 && hora < 24) 
+                {
+                    if (minutos < 10) 
+                    {
                         informacao.innerHTML = `<h2>São exatamente ${hora}:0${minutos} </h2>`
                         imagem.innerHTML = '<img src="imagens-editadas/imagem-noite.png" alt="">'
                     }
-                    else {
+                    
+                    else 
+                    {
                         informacao.innerHTML = `<h2>São exatamente ${hora}:${minutos}</h2>`
                         imagem.innerHTML = '<img src="imagens-editadas/imagem-noite.png" alt="">'
                     }
