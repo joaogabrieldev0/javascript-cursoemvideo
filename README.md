@@ -2,3 +2,8 @@
 Curso de JavaScript - Curso em Video
 
 <h1>Esse é meu repositório de JavaScript no Github, segue alguns projetos que fiz até agora!</h1>
+
+<h1>Projeto 1: Site que Mostra a Hora Exata do Dia, de acordo com a hora, apresenta uma saudação e uma imagem diferente!</h1>
+
+<a href="Aulas/Modulo D/Exercicios JavaScript/Parte 1/index.html">Projeto 1</a>
+
