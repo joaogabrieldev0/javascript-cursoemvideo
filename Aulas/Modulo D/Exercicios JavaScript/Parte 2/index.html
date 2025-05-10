@@ -3,9 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Verificador de Idade</title>
+    <style>
+        
+        .numeroTXT::-webkit-inner-spin-button{
+            appearance: none;
+            
+        }
+
+        body{
+            background-color: rgb(87, 87, 87);
+
+
+        }
+
+        body main{
+            background-color: white;
+
+
+        }
+
+
+
+    </style>
 </head>
 <body>
-    <a href="../Parte 1/index.html">Projeto 1</a>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+
+    <main>
+        
+        <div id="div-main">
+            <p>
+                Ano de Nascimento: <input type="number" name="" class="numeroTXT">
+            </p>
+            
+            <p>
+                Sexo: 
+                
+                <input type="radio" name="input-sexo" id="input-homem"><label for="input-homem">Homem</label>
+                
+                <input type="radio" name="input-sexo" id="input-mulher" value="Mulher"><label for="input-mulher">Mulher</label>
+            
+                <input type="radio" name="input-sexo" id="input-outros"><label for="input-outros">Outros</label>
+            
+            </p>
+        
+            <p>
+                <input type="button" value="VERIFICAR!" onclick="verificar()">
+            </p>
+        
+            <div id="div-resultado">
+                <p id="p-resultado">
+                    Texto Teste
+                </p>
+                
+                <img src="" alt="" id="img-resultado">imagem
+            </div>
+        
+        </div>
+    
+    </main>
+    
+    <footer>
+        <p>
+            Criado por <strong>João Gabriel</strong> para:
+
+            <br> Curso em Vídeo &#169
+        </p>
+    </footer>       
+        
+    <script>
+        
+        function verificar(){        
+
+        // Dados do Usuario
+        var anoNasc = Number((document.getElementById('numeroTXT')).value);
+        var homem = document.getElementById('input-homem')
+        var mulher = document.getElementById('input-mulher')
+        var outros = document.getElementById('input-outros')
+
+        // Datas 
+        var agora = new Date();
+        var diaAtual = agora.getUTCDay();
+        var mesAtual = (agora.getUTCMonth()) + 1;
+        // UTC Month -> 11 meses (months) 
+        var anoAtual = agora.getUTCFullYear();
+
+        // Definições
+
+        var sexo = "";
+        var idade = 0;
+
+        
+        // Resultados
+        var textoResultado = document.getElementById('p-resultado');
+
+        var main = document.getElementById('main')
+            
+        if(homem.checked == false && mulher.checked == false && outros.checked == false)
+            {
+                            
+            window.alert('Teste')
+
+            } 
+            
+            // else if (homem.checked[0] == true)
+            // {
+
+
+
+            // }
+
+
+            }
+    
+    </script>        
+       
+    
 </body>
 </html>
