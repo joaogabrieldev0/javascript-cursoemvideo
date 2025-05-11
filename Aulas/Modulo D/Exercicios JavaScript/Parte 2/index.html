@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verificador de Idade</title>
+    
     <style>
         
-        .numeroTXT::-webkit-inner-spin-button{
+        #anoTXT::-webkit-inner-spin-button{
             appearance: none;
             
+        }
+
+        #mesTXT::-webkit-inner-spin-button{
+            appearance: none;
         }
 
         body{
@@ -36,17 +41,20 @@
         
         <div id="div-main">
             <p>
-                Ano de Nascimento: <input type="number" name="" class="numeroTXT">
+                Ano de Nascimento: <input type="number" name="" id="anoTXT">
             </p>
+
+            <p>
+                Mês de Nascimento: <input type="number" name="" id="mesTXT"></p>
             
             <p>
-                Sexo: 
+                Gênero: 
                 
-                <input type="radio" name="radio-sexo" id="radio-homem"><label for="radio-homem">Homem</label>
+                <input type="radio" name="radio-sexo" id="radio-homem"><label for="radio-homem">Masculino</label>
                 
-                <input type="radio" name="radio-sexo" id="radio-mulher" value="Mulher"><label for="radio-mulher">Mulher</label>
+                <input type="radio" name="radio-sexo" id="radio-mulher" value="Mulher"><label for="radio-mulher">Feminino</label>
             
-                <input type="radio" name="radio-sexo" id="radio-outros"><label for="radio-outros">Outros</label>
+                <input type="radio" name="radio-sexo" id="radio-o'utros"><label for="radio-outros">Outros</label>
             
             </p>
         
@@ -56,14 +64,105 @@
         
             <div id="div-resultado">
                 <p id="p-resultado">
-                    Texto Teste
+                    
                 </p>
                 
-                <img src="" alt="" id="img-resultado">imagem
+                <img src="" alt="" id="img-resultado">
             </div>
         
         </div>
     
+    <script>
+        // Definições do Sistema
+        var agora = new Date()
+        
+        var mesTXT = "";
+
+        var anoAtual = agora.getUTCFullYear();
+        
+        var mesAtual = (agora.getUTCMonth()) + 1;
+
+        switch(mesAtual){
+            case (mesAtual == 1):
+                var mesTXT = "Janeiro";
+                break
+        
+            case (mesAtual == 2):
+                var mesTXT = "Fevereiro";
+                break
+            
+            case (mesAtual == 3):
+                var mesTXT = "Março";
+                break
+            
+            case (mesAtual == 4):
+                var mesTXT = "Abril";
+                break
+
+            case (mesAtual == 5):
+                var mesTXT = "Maio";
+                break
+        }
+            
+        
+        // Dados do Usuario 
+        var anoNasc = document.getElementById('anoTXT')
+        
+        var mesNasc = document.getElementById('mesTXT')
+
+        var radsex = document.getElementsByName('radio-sexo')
+
+        // Tratamento dos Dados (Resultado)
+
+        var mesRes = mesAtual - Number(mesNasc);
+        var idade = anoAtual - Number(anoNasc);
+        var resultado = document.getElementById('p-resultado')
+        var img = document.getElementById
+        ('img-resultado')
+        var genero = '';
+
+
+        function verificar()
+        {       
+            // Definições de Erro
+            if (anoNasc.value > anoAtual || anoNasc.value.length == 0)
+            {
+
+            window.alert('[ERRO] Informe um ano válido!')
+            }
+
+            else if (mesNasc.value > 12 || mesNasc.value.length == 0) 
+            {
+                window.alert('[ERRO] Informe um Mês Valido')
+            }
+            
+            else if(radsex[0].checked == false && radsex[1].checked == false && radsex[2].checked == false)
+            {
+                window.alert('[ERRO] Por favor, Informe um gênero!')
+            }
+            
+            // Definições dos Dados 
+        
+            else if(radsex[0].checked == true)
+        
+            // img.src = "";
+
+            genero = 'Homem'
+            resultado.innerHTML = `Nasceu em ${anoNasc}, é ${genero}, tem ${idade} anos e ${mesRes} meses!`        
+        
+        }
+
+
+
+
+
+    </script>     
+   
+   
+   
+   
+   
+   
     </main>
     
     <footer>
@@ -74,54 +173,7 @@
         </p>
     </footer>       
         
-    <script>
-        
-        // Dados do Usuario
-        var anoNasc = Number((document.getElementById('numeroTXT')).value);
-        // var radioSexo = document.getElementsByName('radio-sexo') 
-        // // var radhomem = document.getElementById('radio-homem')
-        // // var radmulher = document.getElementById('radio-mulher')
-        // // var radoutros = document.getElementById('radio-outros')
-
-        // Datas 
-        var agora = new Date();
-        var diaAtual = agora.getUTCDay();
-        var mesAtual = (agora.getUTCMonth()) + 1;
-        // UTC Month -> 11 meses (months) 
-        var anoAtual = agora.getUTCFullYear();
-
-        // Definições
-
-        var sexo = "";
-        var idade = 0;
-
-        
-        // Resultados
-        var textoResultado = document.getElementById('p-resultado');
-
-        var main = document.getElementById('main')
-            
-        function verificar(){
-
-                    
-        if(anoNasc > anoAtual){
-            window.alert('ERRO')
-
-
-
-        }
-
-
-
-        }
-
-
-
-
-
-
-
-    </script>        
+      
        
     
 </body>
