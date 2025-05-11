@@ -42,11 +42,11 @@
             <p>
                 Sexo: 
                 
-                <input type="radio" name="input-sexo" id="input-homem"><label for="input-homem">Homem</label>
+                <input type="radio" name="radio-sexo" id="radio-homem"><label for="radio-homem">Homem</label>
                 
-                <input type="radio" name="input-sexo" id="input-mulher" value="Mulher"><label for="input-mulher">Mulher</label>
+                <input type="radio" name="radio-sexo" id="radio-mulher" value="Mulher"><label for="radio-mulher">Mulher</label>
             
-                <input type="radio" name="input-sexo" id="input-outros"><label for="input-outros">Outros</label>
+                <input type="radio" name="radio-sexo" id="radio-outros"><label for="radio-outros">Outros</label>
             
             </p>
         
@@ -76,13 +76,12 @@
         
     <script>
         
-        function verificar(){        
-
         // Dados do Usuario
         var anoNasc = Number((document.getElementById('numeroTXT')).value);
-        var homem = document.getElementById('input-homem')
-        var mulher = document.getElementById('input-mulher')
-        var outros = document.getElementById('input-outros')
+        // var radioSexo = document.getElementsByName('radio-sexo') 
+        // // var radhomem = document.getElementById('radio-homem')
+        // // var radmulher = document.getElementById('radio-mulher')
+        // // var radoutros = document.getElementById('radio-outros')
 
         // Datas 
         var agora = new Date();
@@ -102,23 +101,26 @@
 
         var main = document.getElementById('main')
             
-        if(homem.checked == false && mulher.checked == false && outros.checked == false)
-            {
-                            
-            window.alert('Teste')
+        function verificar(){
 
-            } 
-            
-            // else if (homem.checked[0] == true)
-            // {
+                    
+        if(anoNasc > anoAtual){
+            window.alert('ERRO')
 
 
 
-            // }
+        }
 
 
-            }
-    
+
+        }
+
+
+
+
+
+
+
     </script>        
        
     
