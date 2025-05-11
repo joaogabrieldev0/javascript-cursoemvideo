@@ -7,5 +7,177 @@
 </head>
 <body>
 
+    
+    <style>
+        
+        #anoTXT::-webkit-inner-spin-button{
+            appearance: none;
+            
+        }
+
+        #mesTXT::-webkit-inner-spin-button{
+            appearance: none;
+        }
+
+        body{
+            background-color: rgb(87, 87, 87);
+
+
+        }
+
+        body main{
+            background-color: white;
+
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+
+    <main>
+        
+        <div id="div-main">
+            <p>
+                Ano de Nascimento: <input type="number" name="" id="anoTXT">
+            </p>
+
+            <p>
+                Mês de Nascimento: <input type="number" name="" id="mesTXT"></p>
+            
+            <p>
+                Gênero: 
+                
+                <input type="radio" name="radio-sexo" id="radio-homem"><label for="radio-homem">Masculino</label>
+                
+                <input type="radio" name="radio-sexo" id="radio-mulher" value="Mulher"><label for="radio-mulher">Feminino</label>
+            
+                <input type="radio" name="radio-sexo" id="radio-o'utros"><label for="radio-outros">Outros</label>
+            
+            </p>
+        
+            <p>
+                <input type="button" value="VERIFICAR!" onclick="verificar()">
+            </p>
+        
+            <div id="div-resultado">
+                <p id="p-resultado">
+                    
+                </p>
+                
+                <img src="" alt="" id="img-resultado">
+            </div>
+        
+        </div>
+    
+    <script>
+        // Definições do Sistema
+        var agora = new Date()
+        
+        var mesTXT = "";
+
+        var anoAtual = agora.getUTCFullYear();
+        
+        var mesAtual = (agora.getUTCMonth()) + 1;
+
+        switch(mesAtual){
+            case (mesAtual == 1):
+                var mesTXT = "Janeiro";
+                break
+        
+            case (mesAtual == 2):
+                var mesTXT = "Fevereiro";
+                break
+            
+            case (mesAtual == 3):
+                var mesTXT = "Março";
+                break
+            
+            case (mesAtual == 4):
+                var mesTXT = "Abril";
+                break
+
+            case (mesAtual == 5):
+                var mesTXT = "Maio";
+                break
+        }
+            
+        
+        // Dados do Usuario 
+        var anoNasc = document.getElementById('anoTXT')
+        
+        var mesNasc = document.getElementById('mesTXT')
+
+        var radsex = document.getElementsByName('radio-sexo')
+
+        // Tratamento dos Dados (Resultado)
+
+        var mesRes = mesAtual - Number(mesNasc);
+        var idade = anoAtual - Number(anoNasc);
+        var resultado = document.getElementById('p-resultado')
+        var img = document.getElementById
+        ('img-resultado')
+        var genero = '';
+
+
+        function verificar()
+        {       
+            // Definições de Erro
+            if (anoNasc.value > anoAtual || anoNasc.value.length == 0)
+            {
+
+            window.alert('[ERRO] Informe um ano válido!')
+            }
+
+            else if (mesNasc.value > 12 || mesNasc.value.length == 0) 
+            {
+                window.alert('[ERRO] Informe um Mês Valido')
+            }
+            
+            else if(radsex[0].checked == false && radsex[1].checked == false && radsex[2].checked == false)
+            {
+                window.alert('[ERRO] Por favor, Informe um gênero!')
+            }
+            
+            // Definições dos Dados 
+        
+            else if(radsex[0].checked == true)
+        
+            // img.src = "";
+
+            genero = 'Homem'
+            resultado.innerHTML = `Nasceu em ${anoNasc}, é ${genero}, tem ${idade} anos e ${mesRes} meses!`        
+        
+        }
+
+
+
+
+
+    </script>     
+   
+   
+   
+   
+   
+   
+    </main>
+    
+    <footer>
+        <p>
+            Criado por <strong>João Gabriel</strong> para:
+
+            <br> Curso em Vídeo &#169
+        </p>
+    </footer>       
+        
+      
+       
+    
 </body>
 </html>
