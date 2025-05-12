@@ -1,1 +1,25 @@
 @charset "UTF-8";
+      
+#anoTXT::-webkit-inner-spin-button{
+    appearance: none;
+    
+}
+
+#mesTXT::-webkit-inner-spin-button{
+    appearance: none;
+}
+
+body{
+    background-color: rgb(87, 87, 87);
+
+
+}
+
+body main{
+     background-color: white; 
+    /* background-image: url(imagens-modelo/imagem-arcoiris-grande.jpg); */
+
+
+}
+
+

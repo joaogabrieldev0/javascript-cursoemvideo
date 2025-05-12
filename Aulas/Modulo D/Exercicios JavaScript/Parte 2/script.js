@@ -53,15 +53,23 @@ function verificar() {
   }
 
   // Definições das Condições
-    // Condição 1
+  // Condição 1 - Homem
   else if (radsex[0].checked == true) {
     genero = "Homem";
 
     corpoDoc.style.backgroundColor = "#BFD7FF";
+    corpoDoc.style.backgroundImage = "none";
+    corpoDoc.style.color = "black";
 
-    var mesRes = Number(mesAtual) - Number(mesNasc.value);
+    var mesRes = Number(mesNasc.value) + 12 - Number(mesAtual);
 
     var idadeRes = Number(anoAtual) - Number(anoNasc.value);
+
+    if (mesRes >= 12) {
+      mesRes = mesRes - 12;
+    } else if (mesNasc.value < mesAtual) {
+      idadeRes--;
+    }
 
     var mesText = "";
 
@@ -94,18 +102,42 @@ function verificar() {
     resultado.innerHTML = `É ${genero}, nasceu em ${mesText} de ${anoNasc.value}, e tem ${idadeRes} anos e ${mesRes} meses!`;
     resultado.style.display = "block";
 
-    corpoDoc.style.transition = "all 1.0s cubic-bezier(0.25, 0.73, 0.50, 0.90)";
-  } 
-  
-  // Condição 2
+    corpoDoc.style.transition = "all 0.4s cubic-bezier(0.07, 0.53, 0.40, 0.94)";
+
+    if (idadeRes > 120) {
+      window.alert("[ERRO] Idade Impossivel. Informe uma Idade Válida!");
+    } else if (idadeRes < 13) {
+      img.src = "imagens/imagens-editadas/homem-crianca.png";
+      img.style.width = "350px";
+    } else if (idadeRes >= 13 && idadeRes < 25) {
+      img.src = "imagens/imagens-editadas/homem-jovem.png";
+      img.style.width = "350px";
+    } else if (idadeRes >= 25 && idadeRes < 49) {
+      img.src = "imagens/imagens-editadas/homem-adulto.png";
+      img.style.width = "350px";
+    } else if (idadeRes >= 50) {
+      img.src = "imagens/imagens-editadas/homem-idoso.png";
+      img.style.width = "350px";
+    }
+  }
+
+  // Condição 2 - Mulher
   else if (radsex[1].checked == true) {
     genero = "Mulher";
 
     corpoDoc.style.backgroundColor = "#FFD4FF";
+    corpoDoc.style.backgroundImage = "none";
+    corpoDoc.style.color = "black";
 
-    var mesRes = Number(mesAtual) - Number(mesNasc.value);
+    var mesRes = Number(mesNasc.value) + 12 - Number(mesAtual);
 
     var idadeRes = Number(anoAtual) - Number(anoNasc.value);
+
+    if (mesRes >= 12) {
+      mesRes = mesRes - 12;
+    } else if (mesNasc.value < mesAtual) {
+      idadeRes--;
+    }
 
     var mesText = "";
 
@@ -138,24 +170,47 @@ function verificar() {
     resultado.innerHTML = `É ${genero}, nasceu em ${mesText} de ${anoNasc.value}, e tem ${idadeRes} anos e ${mesRes} meses!`;
     resultado.style.display = "block";
 
-    corpoDoc.style.transition = "all 1.0s cubic-bezier(0.25, 0.73, 0.50, 0.90)";
+    corpoDoc.style.transition = "all 0.4s cubic-bezier(0.07, 0.53, 0.40, 0.94)";
+
+    if (idadeRes > 120) {
+      window.alert("[ERRO] Idade Impossivel. Informe uma Idade Válida!");
+    } else if (idadeRes < 13) {
+      img.src = "imagens/imagens-editadas/crianca-mulher.png";
+      img.style.width = "350px";
+    } else if (idadeRes >= 13 && idadeRes < 25) {
+      img.src = "imagens/imagens-editadas/jovem-mulher.png";
+      img.style.width = "350px";
+    } else if (idadeRes >= 25 && idadeRes < 49) {
+      img.src = "imagens/imagens-editadas/mulher-adulta.png";
+      img.style.width = "350px";
+    } else if (idadeRes >= 50) {
+      img.src = "imagens/imagens-editadas/mulher-idosa.png";
+      img.style.width = "350px";
+    }
   }
-    
-  // Condição 3
-   else if (radsex[2].checked == true) {
+
+  // Condição 3 - Outros
+  else if (radsex[2].checked == true) {
     genero = "LGBTQIAPN+";
 
     corpoDoc.style.backgroundImage =
       "url(imagens-modelo/imagem-arcoiris-grande.jpg)";
 
-    corpoDoc.style.color = 'white'
-    
-      corpoDoc.style.transition =
-        "all 1.0s cubic-bezier(0.05, 0.71, 0.17, 0.95)";
+    corpoDoc.style.backgroundSize = "cover";
 
-    var mesRes = Number(mesAtual) - Number(mesNasc.value);
+    corpoDoc.style.color = "white";
+
+    corpoDoc.style.transition = "all 0.4s cubic-bezier(0.07, 0.53, 0.40, 0.94)";
+
+    var mesRes = Number(mesNasc.value) + 12 - Number(mesAtual);
 
     var idadeRes = Number(anoAtual) - Number(anoNasc.value);
+
+    if (mesRes >= 12) {
+      mesRes = mesRes - 12;
+    } else if (mesNasc.value < mesAtual) {
+      idadeRes--;
+    }
 
     var mesText = "";
 
@@ -187,10 +242,21 @@ function verificar() {
 
     resultado.innerHTML = `É ${genero}, nasceu em ${mesText} de ${anoNasc.value}, e tem ${idadeRes} anos e ${mesRes} meses!`;
     resultado.style.display = "block";
-  
-    if (idadeRes < 12)
-      {
-        img.src = "imagens/"
-      }
+
+    if (idadeRes > 120) {
+      window.alert("[ERRO] Idade Impossivel. Informe uma Idade Válida!");
+    } else if (idadeRes < 13) {
+      img.src = "imagens/imagens-editadas/crianca-outros.png";
+      img.style.width = "350px";
+    } else if (idadeRes >= 13 && idadeRes < 25) {
+      img.src = "imagens/imagens-editadas/jovem-outros.png";
+      img.style.width = "350px";
+    } else if (idadeRes >= 25 && idadeRes < 49) {
+      img.src = "imagens/imagens-editadas/adultos-outros.png";
+      img.style.width = "350px";
+    } else if (idadeRes >= 50) {
+      img.src = "imagens/imagens-editadas/idoso-outros.png";
+      img.style.width = "350px";
+    }
   }
 }
