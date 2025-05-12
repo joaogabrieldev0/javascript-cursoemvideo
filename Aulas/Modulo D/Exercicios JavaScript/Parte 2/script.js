@@ -53,6 +53,7 @@ function verificar() {
   }
 
   // Definições das Condições
+    // Condição 1
   else if (radsex[0].checked == true) {
     genero = "Homem";
 
@@ -94,7 +95,10 @@ function verificar() {
     resultado.style.display = "block";
 
     corpoDoc.style.transition = "all 1.0s cubic-bezier(0.25, 0.73, 0.50, 0.90)";
-  } else if (radsex[1].checked == true) {
+  } 
+  
+  // Condição 2
+  else if (radsex[1].checked == true) {
     genero = "Mulher";
 
     corpoDoc.style.backgroundColor = "#FFD4FF";
@@ -135,13 +139,19 @@ function verificar() {
     resultado.style.display = "block";
 
     corpoDoc.style.transition = "all 1.0s cubic-bezier(0.25, 0.73, 0.50, 0.90)";
-  } else if (radsex[2].checked == true) {
+  }
+    
+  // Condição 3
+   else if (radsex[2].checked == true) {
     genero = "LGBTQIAPN+";
 
     corpoDoc.style.backgroundImage =
       "url(imagens-modelo/imagem-arcoiris-grande.jpg)";
 
-    corpoDoc.style.transition = "all 1.0s cubic-bezier(0.25, 0.73, 0.50, 0.90)";
+    corpoDoc.style.color = 'white'
+    
+      corpoDoc.style.transition =
+        "all 1.0s cubic-bezier(0.05, 0.71, 0.17, 0.95)";
 
     var mesRes = Number(mesAtual) - Number(mesNasc.value);
 
@@ -177,5 +187,10 @@ function verificar() {
 
     resultado.innerHTML = `É ${genero}, nasceu em ${mesText} de ${anoNasc.value}, e tem ${idadeRes} anos e ${mesRes} meses!`;
     resultado.style.display = "block";
+  
+    if (idadeRes < 12)
+      {
+        img.src = "imagens/"
+      }
   }
 }
