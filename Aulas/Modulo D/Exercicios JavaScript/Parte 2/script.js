@@ -65,14 +65,15 @@ function verificar() {
 
     var idadeRes = Number(anoAtual) - Number(anoNasc.value);
 
-    if (mesRes >= 12) {
-      mesRes = mesRes - 12;
+    if (mesRes > 12) {
+      mesRes = 12 - (mesNasc.value - mesAtual);
+      idadeRes--;
+    } else if (mesRes == 12) {
+      mesRes = 0;
     } else if (mesNasc.value < mesAtual) {
-      idadeRes--;
-    } else if (mesNasc.value > mesAtual) {
-      idadeRes--;
+      mesRes = 0 + (mesAtual - mesNasc.value);
     }
-
+    
     var mesText = "";
 
     if (mesNumb == 1) {
@@ -134,14 +135,18 @@ function verificar() {
     var mesRes = Number(mesNasc.value) + 12 - Number(mesAtual);
 
     var idadeRes = Number(anoAtual) - Number(anoNasc.value);
-
-    if (mesRes >= 12) {
-      mesRes = mesRes - 12;
+    
+    if (mesRes > 12) {
+      mesRes = 12 - (mesNasc.value - mesAtual)
+      idadeRes--;
+       
+    } else if (mesRes == 12) {
+      mesRes = 0;
+    
     } else if (mesNasc.value < mesAtual) {
-      idadeRes--;
-    } else if (mesNasc.value > mesAtual) {
-      idadeRes--;
+      mesRes = 0 + (mesAtual - mesNasc.value);
     }
+    
 
     var mesText = "";
 
@@ -210,13 +215,16 @@ function verificar() {
 
     var idadeRes = Number(anoAtual) - Number(anoNasc.value);
 
-    if (mesRes >= 12) {
-      mesRes = mesRes - 12;
+    if (mesRes > 12) {
+      mesRes = 12 - (mesNasc.value - mesAtual);
+      idadeRes--;
+    } else if (mesRes == 12) {
+      mesRes = 0;
     } else if (mesNasc.value < mesAtual) {
-      idadeRes --;
-    } else if (mesNasc.value > mesAtual){
-      idadeRes --;
+      mesRes = 0 + (mesAtual - mesNasc.value);
     }
+    
+
 
     var mesText = "";
 
