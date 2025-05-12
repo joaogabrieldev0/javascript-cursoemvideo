@@ -44,11 +44,12 @@
         
         <div id="div-main">
             <p>
-                Ano de Nascimento: <input type="number" name="" id="anoTXT">
+                Ano de Nascimento: <input type="number" name="" id="anoTXT" maxlength="4">
             </p>
 
             <p>
-                Mês de Nascimento: <input type="number" name="" id="mesTXT"></p>
+                Mês de Nascimento: <input type="number" name="" id="mesTXT" maxlength="2">
+            </p>
             
             <p>
                 Gênero: 
@@ -129,6 +130,10 @@
 
         function verificar()
         {       
+            
+            // Definições do Sistema
+
+        
             // Definições de Erro
             if (anoNasc.value > anoAtual || anoNasc.value.length == 0)
             {
@@ -151,9 +156,11 @@
             else if(radsex[0].checked == true)
             genero = 'Homem';
             
-            var mesRes = mesAtual - mesNasc.value;
+            var mesRes = Number(mesAtual) - Number(mesNasc.value);
             
             var idadeRes = Number(anoAtual) - Number(anoNasc.value);
+
+            resultado.innerHTML = `É Homem, nasceu em ${mesText} de ${anoNasc.value}, e tem ${idadeRes} anos e ${mesRes} meses`
 
         }
 
