@@ -44,11 +44,11 @@
         
         <div id="div-main">
             <p>
-                Ano de Nascimento: <input type="number" name="" id="anoTXT" maxlength="4">
+                Ano de Nascimento: <input type="number" id="anoTXT">
             </p>
 
             <p>
-                Mês de Nascimento: <input type="number" name="" id="mesTXT" maxlength="2">
+                Mês de Nascimento: <input type="number" name="" id="mesTXT">
             </p>
             
             <p>
@@ -77,6 +77,9 @@
         </div>
     
     <script>
+        function verificar() {
+            
+        
         // Definições do Sistema
         var agora = new Date()
     
@@ -86,33 +89,33 @@
 
         var mesText = "";
 
-        if (mesAtual == 1) {
+            if (mesNasc == 1) {
                 mesText = "Janeiro";
-            } else if (mesAtual == 2) {
+            } else if (mesNasc == 2) {
                 mesText = "Fevereiro";
-            } else if (mesAtual == 3) {
+            } else if (mesNasc == 3) {
                 mesText = "Março";
-            } else if (mesAtual == 4) {
+            } else if (mesNasc == 4) {
                 mesText = "Abril";
-            } else if (mesAtual == 5) {
+            } else if (mesNasc == 5) {
                 mesText = "Maio";
-            } else if (mesAtual == 6) {
+            } else if (mesNasc == 6) {
                 mesText = "Junho";
-            } else if (mesAtual == 7) {
+            } else if (mesNasc == 7) {
                 mesText = "Julho";
-            } else if (mesAtual == 8) {
+            } else if (mesNasc == 8) {
                 mesText = "Agosto";
-            } else if (mesAtual == 9) {
+            } else if (mesNasc == 9) {
                 mesText = "Setembro";
-            } else if (mesAtual == 10) {
+            } else if (mesNasc == 10) {
                 mesText = "Outubro";
-            } else if (mesAtual == 11) {
+            } else if (mesNasc == 11) {
                 mesText = "Novembro";
-            } else if (mesAtual == 12) {
+            } else if (mesNasc == 12) {
                 mesText = "Dezembro";
             }
-            
         
+
         // Dados do Usuario 
         var anoNasc = document.getElementById('anoTXT')
         
@@ -127,43 +130,49 @@
         ('img-resultado')
         var genero = '';
 
-
-        function verificar()
-        {       
-            
             // Definições do Sistema
 
         
             // Definições de Erro
             if (anoNasc.value > anoAtual || anoNasc.value.length == 0)
             {
-
-            window.alert('[ERRO] Informe um ano válido!')
+                anoAtual = null
+                mesAtual = null
+                genero = ""
+                window.alert('[ERRO] Informe um ano válido!');
+                resultado.innerText = "";
             }
 
             else if (mesNasc.value > 12 || mesNasc.value.length == 0) 
             {
-                window.alert('[ERRO] Informe um Mês Valido')
+                anoAtual = null
+                mesAtual = null
+                genero = "";
+                window.alert('[ERRO] Informe um Mês Valido');
+                resultado.innerHTML = "";
             }
             
             else if(radsex[0].checked == false && radsex[1].checked == false && radsex[2].checked == false)
             {
-                window.alert('[ERRO] Por favor, Informe um gênero!')
+                anoAtual = null
+                mesAtual = null
+                genero = "";
+                window.alert('[ERRO] Por favor, Informe um gênero!');
+                resultado.innerHTML = "";
             }
             
             // Definições dos Dados 
         
             else if(radsex[0].checked == true)
-            genero = 'Homem';
+                genero = "Homem";
             
-            var mesRes = Number(mesAtual) - Number(mesNasc.value);
+                var mesRes = Number(mesAtual) - Number(mesNasc.value);
             
-            var idadeRes = Number(anoAtual) - Number(anoNasc.value);
+                var idadeRes = Number(anoAtual) - Number(anoNasc.value);
 
-            resultado.innerHTML = `É Homem, nasceu em ${mesText} de ${anoNasc.value}, e tem ${idadeRes} anos e ${mesRes} meses`
+                resultado.innerHTML = `É ${genero}, nasceu em ${mesText} de ${anoNasc.value}, e tem ${idadeRes} anos e ${mesRes} meses!`
 
         }
-
 
     </script>     
    
