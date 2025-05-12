@@ -26,8 +26,8 @@
         }
 
         body main{
-            /* background-color: white; */
-            background-image: url(imagens-modelo/);
+             background-color: white; 
+            /* background-image: url(imagens-modelo/imagem-arcoiris-grande.jpg); */
 
 
 
@@ -238,7 +238,7 @@
                 resultado.innerHTML = `É ${genero}, nasceu em ${mesText} de ${anoNasc.value}, e tem ${idadeRes} anos e ${mesRes} meses!`
                 resultado.style.display = 'block'
 
-                corpoDoc.style.transition = ""
+                corpoDoc.style.transition = "all 1.0s cubic-bezier(0.25, 0.73, 0.50, 0.90)"
                 
             }   
 
@@ -246,9 +246,9 @@
             {
                 genero = "LGBTQIAPN+";
 
-                corpoDoc.style.backgroundImage = ''
+                corpoDoc.style.backgroundImage = "url(imagens-modelo/imagem-arcoiris-grande.jpg)";
 
-                // corpoDoc.style.cssText = "background-image:  transition: all 1.0s cubic-bezier(0.25, 0.73, 0.50, 0.90); color: white;";
+                corpoDoc.style.transition = "all 1.0s cubic-bezier(0.25, 0.73, 0.50, 0.90)"
 
                 var mesRes = Number(mesAtual) - Number(mesNasc.value);
 
