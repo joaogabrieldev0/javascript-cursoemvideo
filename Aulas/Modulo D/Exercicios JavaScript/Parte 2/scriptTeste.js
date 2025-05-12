@@ -4,33 +4,33 @@ var agora = new Date();
 
 // console.log(mesAtual)
 
-var mesAtual = agora.getUTCMonth() + 1;
+var mesNasc = 3;
 
 var mesText = "";
 
-if (mesAtual == 1) {
+if (mesNasc == 1) {
   mesText = "Janeiro";
-} else if (mesAtual == 2) {
+} else if (mesNasc == 2) {
   mesText = "Fevereiro";
-} else if (mesAtual == 3) {
+} else if (mesNasc == 3) {
   mesText = "Março";
-} else if (mesAtual == 4) {
+} else if (mesNasc == 4) {
   mesText = "Abril";
-} else if (mesAtual == 5) {
+} else if (mesNasc == 5) {
   mesText = "Maio";
-} else if (mesAtual == 6) {
+} else if (mesNasc == 6) {
   mesText = "Junho";
-} else if (mesAtual == 7) {
+} else if (mesNasc == 7) {
   mesText = "Julho";
-} else if (mesAtual == 8) {
+} else if (mesNasc == 8) {
   mesText = "Agosto";
-} else if (mesAtual == 9) {
+} else if (mesNasc == 9) {
   mesText = "Setembro";
-} else if (mesAtual == 10) {
+} else if (mesNasc == 10) {
   mesText = "Outubro";
-} else if (mesAtual == 11) {
+} else if (mesNasc == 11) {
   mesText = "Novembro";
-} else if (mesAtual == 12) {
+} else if (mesNasc == 12) {
   mesText = "Dezembro";
 }
 
