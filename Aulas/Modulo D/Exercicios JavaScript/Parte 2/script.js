@@ -69,6 +69,8 @@ function verificar() {
       mesRes = mesRes - 12;
     } else if (mesNasc.value < mesAtual) {
       idadeRes--;
+    } else if (mesNasc.value > mesAtual) {
+      idadeRes--;
     }
 
     var mesText = "";
@@ -136,6 +138,8 @@ function verificar() {
     if (mesRes >= 12) {
       mesRes = mesRes - 12;
     } else if (mesNasc.value < mesAtual) {
+      idadeRes--;
+    } else if (mesNasc.value > mesAtual) {
       idadeRes--;
     }
 
@@ -209,7 +213,9 @@ function verificar() {
     if (mesRes >= 12) {
       mesRes = mesRes - 12;
     } else if (mesNasc.value < mesAtual) {
-      idadeRes--;
+      idadeRes --;
+    } else if (mesNasc.value > mesAtual){
+      idadeRes --;
     }
 
     var mesText = "";
