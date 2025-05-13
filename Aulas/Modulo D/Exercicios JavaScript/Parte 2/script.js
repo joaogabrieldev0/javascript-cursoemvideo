@@ -17,6 +17,7 @@ function verificar() {
 
   // Tratamento dos Dados (Resultado)
 
+  var reset = document.getElementById("botao-resetar");
   var resultado = document.getElementById("p-resultado");
   var img = document.getElementById("img-resultado");
   var corpoDoc = document.getElementById("body-main");
@@ -73,7 +74,7 @@ function verificar() {
     } else if (mesNasc.value < mesAtual) {
       mesRes = 0 + (mesAtual - mesNasc.value);
     }
-    
+
     var mesText = "";
 
     if (mesNumb == 1) {
@@ -135,18 +136,15 @@ function verificar() {
     var mesRes = Number(mesNasc.value) + 12 - Number(mesAtual);
 
     var idadeRes = Number(anoAtual) - Number(anoNasc.value);
-    
+
     if (mesRes > 12) {
-      mesRes = 12 - (mesNasc.value - mesAtual)
+      mesRes = 12 - (mesNasc.value - mesAtual);
       idadeRes--;
-       
     } else if (mesRes == 12) {
       mesRes = 0;
-    
     } else if (mesNasc.value < mesAtual) {
       mesRes = 0 + (mesAtual - mesNasc.value);
     }
-    
 
     var mesText = "";
 
@@ -223,8 +221,6 @@ function verificar() {
     } else if (mesNasc.value < mesAtual) {
       mesRes = 0 + (mesAtual - mesNasc.value);
     }
-    
-
 
     var mesText = "";
 
@@ -273,4 +269,10 @@ function verificar() {
       img.style.width = "350px";
     }
   }
+
+  reset.style.display = "block";
+}
+
+function resetar() {
+  window.location.reload(true);
 }

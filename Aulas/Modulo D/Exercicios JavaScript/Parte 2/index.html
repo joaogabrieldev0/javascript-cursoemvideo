@@ -1,76 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verificador de Idade</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    </head>
 
-    
-    <style>
+    <body>
+        <header>
+            <h1>Verificador de Idade</h1>
+        </header>
 
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Verificador de Idade</h1>
-    </header>
+        <main id="body-main">
 
-    <main id="body-main">
-        
-        <div id="div-main">
-            <p>
-                Ano de Nascimento: <input type="number" id="anoTXT">
-            </p>
-
-            <p>
-                Mês de Nascimento: <input type="number" name="" id="mesTXT">
-            </p>
-            
-            <p>
-                Gênero: 
-                
-                <input type="radio" name="radio-sexo" id="radio-homem"><label for="radio-homem">Masculino</label>
-                
-                <input type="radio" name="radio-sexo" id="radio-mulher" value="Mulher"><label for="radio-mulher">Feminino</label>
-            
-                <input type="radio" name="radio-sexo" id="radio-o'utros"><label for="radio-outros">Outros</label>
-            
-            </p>
-        
-            <p>
-                <input type="button" value="VERIFICAR!" onclick="verificar()">
-            </p>
-        
-            <div id="div-resultado">
-                <p id="p-resultado">
-                    
+            <div id="div-main">
+                <p id="div-anoNasc">
+                    Ano de Nascimento: <br>
+                    <input type="number" id="anoTXT" placeholder="Informe o ano aqui!">
                 </p>
-                
-                <img src="" alt="" id="img-resultado" width="35%">
-            </div>
-            
-        </div>
-    
-        <p style="appearance: none;"></p>
-    
-        <script src="script.js"></script>
-             
-      
-    </main>
-    
-    <footer>
-        <p>
-            Criado por <strong>João Gabriel</strong> para:
 
-            <br> Curso em Vídeo &#169
-        </p>
-    </footer>       
-        
-      
-       
-    
-</body>
+                <p id="div-mesNasc">
+                    Mês de Nascimento: <br>
+                    <input type="number" name="" id="mesTXT" placeholder="Informe o mês aqui!">
+                </p>
+
+                <p id="div-radios">
+                    Gênero:
+                    <br>
+                    <input type="radio" name="radio-sexo" id="radio-homem"><label for="radio-homem">Masculino</label>
+
+                    <input type="radio" name="radio-sexo" id="radio-mulher" value="Mulher"><label
+                        for="radio-mulher">Feminino</label>
+
+                    <input type="radio" name="radio-sexo" id="radio-o'utros"><label for="radio-outros">Outros</label>
+
+                </p>
+
+                <p>
+                    <input type="button" value="VERIFICAR!" onclick="verificar()">
+                </p>
+
+                <div id="div-resultado">
+                    <p id="p-resultado">
+
+                    </p>
+
+                    <img src="" alt="" id="img-resultado" width="35%">
+                </div>
+
+                <p id="p-botaoresetar"><input type="button" value="RESETAR!" onclick="resetar()" style="display: none;"
+                        id="botao-resetar"></p>
+
+
+            </div>
+
+            <script src="script.js"></script>
+
+        </main>
+
+        <footer>
+            <p>
+                Criado por <strong id="destaque-footer"><a href="https://github.com/joaogabrieldev0" target="_blank"
+                        id="link-destaque">João Gabriel</a></strong> para:
+
+                <br> Curso em Vídeo &#169
+            </p>
+        </footer>
+
+
+
+
+    </body>
+
 </html>
